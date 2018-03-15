@@ -14,16 +14,14 @@ Proceso Zombie : cada proceso tiene una estructura de datos llamada proceso mesa
 
 				La terminación del proceso hijo se completa.
 
-Proceso Daemon : Hasta ahora, habíamos comenzado cada nuevo proceso en una terminal Bash. 
-
-				Por lo tanto, si nosotros imprime cualquier texto con 
+Proceso Daemon : Si nosotros imprimimos cualquier texto con 
 				
 				 $ echo "Hello" 
 				 
-				 se imprimirá en el terminal mismo.
+				 se imprimirá en el mismo terminal .
 				 
 				 Hay ciertos procesos que no están asociados con ningún terminal.
-				 Tales procesos se llamanproceso daemon. Estos procesos se ejecutan en segundo plano.
+				 Tales procesos se llaman procesos daemon. Estos procesos se ejecutan en segundo plano.
 				 Una ventaja del proceso del daemon es que son inmunes a los cambios que suceden en el shell Bash, que lo ha creado.
 				 
 				 Cuando queremos ejecutar ciertos procesos en segundo plano, como servidor DHCP, etc., entonces los procesos daemon son muy útiles.
