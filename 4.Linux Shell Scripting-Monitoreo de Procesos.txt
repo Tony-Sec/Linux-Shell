@@ -1,0 +1,81 @@
+
+************************************************************************************************************************************************
+Monitoreo de procesos usando : top, iostat, y  vmstat
+************************************************************************************************************************************************
+
+$top // Muestra en tiempo real los Procesos corriendo en el SO.
+
+		*us ( usuario ): uso de la CPU en% para ejecutar (sin identificar) los procesos del usuario
+
+		*sy ( sistema ): uso de CPU en% para ejecutando los procesos del kernel
+
+		*ni ( niced ): uso de CPU en% para ejecutar los procesos de usuario niced
+
+		*wa ( IO wait ): uso de CPU en% para esperar la finalización de IO
+
+		*hi ( interrupciones de hardware ): uso de CPU en% para servir interrupciones de hardware
+
+		*si ( interrupciones de software ): uso de CPU en% para atender interrupciones de software
+
+		*st ( tiempo robado ): CPUuso en% por tiempo robado para esta VM por el hipervisor
+		----------------------------------------------------------------------------------------------------------------------------------------
+		PID: Este es el ID del proceso
+
+		USER: Este es el usuario que es el dueño del proceso
+
+		PR: Este es el prioridad del proceso
+
+		NI: Este es el valor "NICE" del proceso
+
+		VIRT: Esta es la memoria virtual utilizada por el proceso
+
+		RES: Esta es la memoria física utilizada para el proceso
+
+		SHR: Esta es la memoria compartida del proceso
+
+		S: Esto indica el estado del proceso: S = dormir, R = correr, y Z = zombie (S)
+
+		%CPU: Este es el% de CPU utilizado por este proceso
+
+		%MEM: Este es el% de RAM utilizado por el proceso
+
+		TIME+: Este es el tiempo total de actividad de este proceso
+
+		COMMAND: Este es el nombre del proceso
+}
+
+
+$ iostat //input output stats ver las estadísticas de la CPU y la utilización del dispositivo de entrada / salida
+
+	$ iostat –c //Muestra solo estadísticas de CPU
+
+	$ iostat –d //Muestra solo estadísticas de disco
+	
+
+$ vmstat //virtual memory stats ,ver el memoria virtual estadísticas
+
+	$ vmstat  -s //muestra varios contadores de eventos y estadísticas de memoria
+	$ vmstat –t 1 5 //Se ejecuta por paradas de un segundo después de ejecutarse durante cinco intervalos
+	
+
+$ sar –u 2 3 // show activity report ,mostrará el informe de actividad de la CPU cada 2 segundos, 3 veces
+
+
+
+
+
+
+
+CRON TABle
+
+
+
+
+
+
+
+
+
+
+
+

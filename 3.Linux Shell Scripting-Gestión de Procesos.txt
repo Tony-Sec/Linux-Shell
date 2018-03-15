@@ -1,0 +1,113 @@
+Proceso huérfano : si por casualidad el proceso principal finaliza, el proceso secundario se convierte en un proceso huérfano.
+
+					El proceso que creó el proceso principal,como el proceso de abuelos, se convierte en el padre del proceso de huérfano. 
+					En el último recurso, el initproceso se convierte en el padre del proceso huérfano.
+
+Proceso Zombie : cada proceso tiene una estructura de datos llamada proceso mesa de control.
+
+				Esto se mantiene en el sistema operativo.
+				Esta tabla contiene la información sobre todos los procesos secundarios creados por el proceso principal.
+				Si, por casualidad, el proceso principal duerme o se suspende debido a alguna razón y el proceso hijo finaliza,
+				entonces el proceso principal no puede recibir la información sobre la terminación del proceso hijo. 
+				En tales casos, el proceso hijo que se ha terminado se denomina proceso zombie. Cuando el proceso principal se despierta,
+				recibiráuna señal con respecto al niño la terminación del proceso y la estructura de datos del bloque de control de proceso se actualizarán. 
+
+				La terminación del proceso hijo se completa.
+
+Proceso Daemon : Hasta ahora, habíamos comenzado cada nuevo proceso en una terminal Bash. 
+
+				Por lo tanto, si nosotros imprime cualquier texto con 
+				
+				 $ echo "Hello" 
+				 
+				 se imprimirá en el terminal mismo.
+				 
+				 Hay ciertos procesos que no están asociados con ningún terminal.
+				 Tales procesos se llamanproceso daemon. Estos procesos se ejecutan en segundo plano.
+				 Una ventaja del proceso del daemon es que son inmunes a los cambios que suceden en el shell Bash, que lo ha creado.
+				 
+				 Cuando queremos ejecutar ciertos procesos en segundo plano, como servidor DHCP, etc., entonces los procesos daemon son muy útiles.
+				 
+				 
+************************************************************************************************************************************************
+Monitoreo de procesos usando ps
+************************************************************************************************************************************************
+
+$ ps //enumerar procesos asociado(PID) asociado con el terminal actual de shell Bash 
+
+$ ps –f //enumerar procesos asociado(PID) junto con el ID del proceso principal(PPID) asociado con el terminal actual de shell Bash 
+
+$ ps –lf //enumerar procesos(PID) con el ID del proceso principal(PPID) junto con el estado del proceso{
+
+		La columna S (state) muestra el estado actual de un proceso
+				   R for running
+				   S for suspended state
+}
+
+$ ps –ef //enumerar todos los procesos que se ejecutan en el sistema operativo, incluidos los procesos del sistema{
+
+		Los procesos con []son threads del kernel
+}
+
+ps –ef | grep "process_name" // encontrar un proceso particular
+
+	Todos muestran el UID (ID de usuario) de quien creó el proceso.
+
+{------------***************************************************************************************************************************************
+-------------Matar procesos
+-------------***************************************************************************************************************************************
+
+			El comando kill funciona con flags ,para ver estas 
+				$ kill –l
+			Cuando ingresamos  $ kill, el sistema operativo envía la flag SIGTERM al proceso.
+			Cuando ingresamos  $ kill -9, el sistema operativo envía la flag SIGKILL al proceso.
+
+			$ kill  pid_of_process_to_be_killed
+			$ pkill command_name
+			$ pkill sleep
+
+			Si no funciona el comando kill o pkill
+
+			$ kill -9 pid_of_process_to_be_killed
+			$ pkill  -9  command_name
+}
+
+
+************************************************************************************************************************************************
+Gestión de procesos
+************************************************************************************************************************************************
+
+En primer plano se ejecutan todos los comandos ejecutados en terminal .
+
+	$ sleep 10000 //El proceso sleep durará 10000 segundos
+
+Ctrl + C finaliza el proceso,Ctrl + Z suspende el proceso.
+
+
+En segundo plano se ejecutan los comandos terminamos con &
+
+	$ sleep 10000 & 
+	
+
+$ jobs {//enumera todos los jobs que se ejecutan en el terminal,incluidos los jobs en primer plano y en segundo plano
+		//[] es el ID del job
+		// + ó - indica que el comando recibirá fg o bg por defecto
+}
+
+Pasar un proceso ejecutandose en segundo plano a primer plano
+
+	$ fg 3 //El proceso con ID 3 se ejecutará en primer plano.
+
+Pasar un proceso suspendido a ejecución en segundo plano
+
+	$ bg 3 
+
+$ jobs –l   //  Listar los procesos por PID (ID de Proceso)
+$ kill pid      or
+$ kill %job_id  // Mata el trabajo con job_ID
+$ kill %3
+
+
+
+
+

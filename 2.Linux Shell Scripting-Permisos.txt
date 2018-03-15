@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------------------------------------
+
+Type of file:
+
+	Regular file (-)
+
+	Directory (d)
+
+	Soft link (l)
+
+	Character device driver (c)
+
+	Block device driver (b)
+
+	Pipe file (p)
+
+	Socket file (s)
+	
+	
+	
+	
+Sticky bit{
+	
+		https://es.wikipedia.org/wiki/Sticky_bit
+		Puede ser asignado a ficheros y directorios
+		
+		Históricamente, el sticky bit se utilizaba en ficheros ejecutablesle indicaba al sistema operativo (SO) que mantuviera el programa en swap 
+		para ejecuciones posteriores (incluso de otros usuarios).
+		Desde entonces el rendimiento de las tecnologías de almacenamiento persistente han mejorado mucho y este uso ha quedado obsoleto.
+		
+		Hoy en día, el sticky bit se utiliza con directorios.
+		Cuando se le asigna a un directorio, significa que los elementos que hay en ese directorio 
+		sólo pueden ser renombrados o borrados por el propietario del elemento, el propietario del directorio o el usuario root,
+		aunque el resto de usuarios tenga permisos de escritura y, por tanto, puedan modificar el contenido de esos elementos.
+		
+		El sticky bit está a menudo configurado para el directorio /tmp
+		
+		$ chmod +t /directorio 
+		$ chmod 1777
+		
+		$ chmod -t /directorio
+}

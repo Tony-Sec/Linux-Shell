@@ -1,0 +1,80 @@
+
+$ man man
+$ man command
+  man -k passwd   // show all pages with keyword
+  man –K passwd  // will search all manual pages for pattern
+$ man passwd
+
+********************************************************************************
+-----------------------------------------------------
+Section number		Subject area
+-----------------------------------------------------
+1					-User commands
+
+2					-System calls
+
+3					-Library calls
+
+4					-Special files
+
+5					-File formats
+
+6					-Games
+
+7					-Miscellaneous
+
+8					-System admin
+
+9					-Kernel routines
+
+
+$ man 1 command
+$ man 5 command
+$ man 5 passwd
+********************************************************************************
+
+$ whatis passwd //get brief information about the command{
+
+		Output:
+		passwd (1ssl)        - compute password hashes
+		passwd (1)           - change user password
+		passwd (5)           - the password file
+
+
+}
+
+
+$ which passwd  //check the location of a binary file{
+
+		Output:
+		/usr/bin/passwd
+
+}
+
+$ whereis passwd //get complete information about the binary file location as well as manual page location{
+
+		Output:
+		passwd: /usr/bin/passwd /etc/passwd /usr/bin/X11/passwd /usr/share/man/man1/passwd.1.gz /usr/share/man/man1/passwd.1ssl.gz /usr/share/man/man5/passwd.5.gz
+
+
+}
+
+$ whoami //Change the user login
+
+$ su //displays the user name of the logged in{
+
+		/*******************************************************************************
+		The su command (switch user) will make the user as the administrator; 
+			but, you should know the administrators, password. 
+		The sudo command (superuser do) will run the command with administrator's privileges. 
+			It is necessary that the user should have been added in the sudoers list.
+		*******************************************************************************/
+
+}
+
+# who am i //show the effective user who is working at that moment
+
+# exit
+
+$ alias ll='ls –l' //create new commands from existing commands
+$ alias copy='cp –rf' 
